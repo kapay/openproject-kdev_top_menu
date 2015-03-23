@@ -13,7 +13,9 @@ module OpenProject::KdevTopMenu
              :requires_openproject => '>= 4.0.0' do
 
       # menu :real_top_menu, :customizations, {}, :caption => "Customizations", :children => Proc.new {[Redmine::MenuManager::MenuItem.new(:custom_child, 'http://example.com', :caption => "custom child")]}
-      menu :real_top_menu, :customization_projects, {:controller => 'projects', :action => 'requirements/wiki/Customization_projects'}, :caption => "Customization projects"
+      menu :real_top_menu, :customizations, {}, :caption => "Customizations"
+      menu :real_top_menu, :customization_utilities, {:controller => 'projects', :action => 'requirements/wiki/Customization_utilities'}, :caption => "Utilities", :parent => :customizations
+      menu :real_top_menu, :customization_drivers, {:controller => 'projects', :action => 'requirements/wiki/Customization_drivers'}, :caption => "Drivers", :parent => :customizations
       menu :real_top_menu, :requirements, {}, :caption => "Requirements"
       menu :real_top_menu, :customization_req, {:controller => 'projects', :action => 'requirements/wiki/Customizations'}, :caption => "Customizations", :parent => :requirements
       menu :real_top_menu, :product_req, {:controller => 'projects', :action => 'requirements/wiki/Products'}, :caption => "Products", :parent => :requirements
